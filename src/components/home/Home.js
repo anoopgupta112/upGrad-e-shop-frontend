@@ -1,5 +1,3 @@
-//import AppBar from '@material-ui/core/AppBar';
-
 
 import React from 'react';
 import { fade, makeStyles } from '@material-ui/core/styles';
@@ -174,7 +172,7 @@ export default function PrimarySearchAppBar() {
 
             <AppBar position="static">
 
-                <Toolbar style={{ display: "flex", justifyContent: "space-around" }}>
+                <Toolbar style={{ display: "flex", justifyContent: "space-between" }}>
                     <h3>
                         UpGrad E-Shop
                     </h3>
@@ -190,12 +188,14 @@ export default function PrimarySearchAppBar() {
 
                     {!authService.isLoggedIn() && (
                         <>
-                            <NavLink className={classes.link} to="/login">
-                                Login
-                            </NavLink>
-                            <NavLink className={classes.link} to="/signup">
-                                Sign Up
-                            </NavLink>
+                            <div>
+                                <NavLink className={classes.link} to="/login">
+                                    Login
+                                </NavLink>
+                                <NavLink className={classes.link} to="/signup">
+                                    Sign Up
+                                </NavLink>
+                            </div>
                         </>
                     )}
                     {authService.isLoggedIn() && (
@@ -214,24 +214,21 @@ export default function PrimarySearchAppBar() {
                                 />
 
                             </div>
+                            <div>
 
-                            <Button type='search'>Search</Button>
-                            <NavLink className={classes.link} to="/home">
-                                Home
-                            </NavLink>
-                            <NavLink className={classes.link} to="/add-product">
-                                AddProduct
-                            </NavLink>
+
+                                <Button type='search'>Search</Button>
+                                <NavLink className={classes.link} to="/home">
+                                    Home
+                                </NavLink>
+                                <NavLink className={classes.link} to="/add-product">
+                                    AddProduct
+                                </NavLink>
+                            </div>
 
                         </>
                     )}
-                    {authService.isLoggedIn() && authService.isAdmin() && (
-                        <>
-                            <NavLink className={classes.link} to="/add-vehicle">
-                                Add Vehicle
-                            </NavLink>
-                        </>
-                    )}
+
 
                     {authService.isLoggedIn() && (
                         <Button variant='contained' color='secondary' onClick={authService.doLogout}>Logout</Button>

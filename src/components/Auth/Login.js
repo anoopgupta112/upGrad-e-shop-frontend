@@ -45,11 +45,7 @@ export default function Login() {
   const [email, setEmail] = React.useState("");
   const [submitAction, setSubmitAction] = React.useState(false);
 
-  /*useEffect(() => {
-      if(authService.isLoggedIn()) {
-        props.history.push('/my-bookings');
-      }
-  }, []);*/
+
 
   useEffect(() => {
     async function doAuth() {

@@ -13,8 +13,7 @@ import '../products/Product.css'
 import IconButton from '@material-ui/core/IconButton';
 import axios from 'axios';
 import { Card } from '@material-ui/core';
-import styled from 'styled-components';
-import Details from '../Details/Details';
+
 import { Link } from 'react-router-dom';
 
 
@@ -49,6 +48,7 @@ export default function Products() {
 
         <div className='Grid-Class'>
             {value.map((v) => {
+                { console.log(v.description) }
                 return (
 
                     <Card className={classes.root}>
@@ -56,6 +56,7 @@ export default function Products() {
                             <CardMedia
                                 className={classes.media}
                                 image={v.imageURL}
+
                                 title="Contemplative Reptile"
                             />
                             <CardContent>
